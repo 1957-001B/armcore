@@ -1,0 +1,105 @@
+[*] CPU debug layout. Run scripts/verilate.sh to regenerate and view the trace.
+[dumpfile] "waveform.vcd"
+[savefile] "signals.gtkw"
+[timestart] 0
+[size] 1400 900
+[treeopen] TOP.
+[treeopen] TOP.cpu_tb.
+[treeopen] TOP.cpu_tb.cpu_inst.
+[sst_width] 250
+[signals_width] 260
+[sst_expanded] 1
+@28
+TOP.cpu_tb.clk
+@22
+TOP.cpu_tb.pc[63:0]
+TOP.cpu_tb.cpu_inst.instruction[31:0]
+@28
+TOP.cpu_tb.reset
+TOP.cpu_tb.halted
+TOP.cpu_tb.test_halt
+TOP.cpu_tb.cpu_inst.req_halt
+@200
+-Register read / writeback
+@28
+TOP.cpu_tb.cpu_inst.RegWrite
+@24
+TOP.cpu_tb.cpu_inst.Write_register[4:0]
+@22
+TOP.cpu_tb.cpu_inst.Write_d[63:0]
+@24
+TOP.cpu_tb.cpu_inst.Read_register_1[4:0]
+TOP.cpu_tb.cpu_inst.Read_register_2[4:0]
+@22
+TOP.cpu_tb.cpu_inst.Read_data_1[63:0]
+TOP.cpu_tb.cpu_inst.Read_data_2[63:0]
+@200
+-ALU / immediate
+@22
+TOP.cpu_tb.cpu_inst.alu_op[3:0]
+TOP.cpu_tb.cpu_inst.padded_imm[63:0]
+TOP.cpu_tb.cpu_inst.alu_mux[63:0]
+TOP.cpu_tb.cpu_inst.alu_result[63:0]
+@28
+TOP.cpu_tb.cpu_inst.alu_zero
+TOP.cpu_tb.cpu_inst.ALUSrc
+TOP.cpu_tb.cpu_inst.ALUOp[1:0]
+@200
+-Next PC / branches
+@28
+TOP.cpu_tb.cpu_inst.pc_select
+TOP.cpu_tb.cpu_inst.UncondBranch
+TOP.cpu_tb.cpu_inst.ZeroBranch
+TOP.cpu_tb.cpu_inst.FlagBranch
+@22
+TOP.cpu_tb.cpu_inst.pc_norm[63:0]
+TOP.cpu_tb.cpu_inst.pc_jump[63:0]
+TOP.cpu_tb.cpu_inst.pc_mux[63:0]
+@200
+-Memory / decode
+@28
+TOP.cpu_tb.cpu_inst.MemRead
+TOP.cpu_tb.cpu_inst.MemWrite
+TOP.cpu_tb.cpu_inst.MemToReg
+@22
+TOP.cpu_tb.cpu_inst.dm_read[63:0]
+@28
+TOP.cpu_tb.cpu_inst.Reg2Loc
+TOP.cpu_tb.cpu_inst.UseSP
+@200
+-General-purpose registers (hex)
+@22
+TOP.cpu_tb.cpu_inst.u_reg_file.X[0][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[1][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[2][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[3][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[4][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[5][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[6][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[7][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[8][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[9][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[10][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[11][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[12][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[13][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[14][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[15][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[16][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[17][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[18][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[19][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[20][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[21][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[22][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[23][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[24][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[25][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[26][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[27][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[28][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[29][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[30][63:0]
+TOP.cpu_tb.cpu_inst.u_reg_file.X[31][63:0]
+[pattern_trace] 1
+[pattern_trace] 0

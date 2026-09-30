@@ -1,5 +1,8 @@
 #!/bin/bash
-set -euo pipefail  
+set -euo pipefail
+
+# Resolve source, trace, and layout paths relative to the repository.
+cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.."
 
 verilator --cc --Wall ./testbenches/sim_main.cpp \
 --exe  \
@@ -12,7 +15,7 @@ verilator --cc --Wall ./testbenches/sim_main.cpp \
 --timing \
 && ./obj_dir/sim_cpu +trace
 
-if [[ "${VIZ}" = "1" ]]; then
-  gtkwave waveform.vcd
+if [[ "${VIZ:-1}" = "1" ]]; then
+  gtkwave waveform.vcd signals.gtkw
 fi
 
